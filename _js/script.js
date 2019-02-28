@@ -50,7 +50,10 @@ function calculatePos(pieceId) {
             var pawn = createNewBlackDwarf(pieceId, cellID);
             calculatePathAhead(pawn);
 
-        } 
+        } else if (pieceId.includes("white")) {
+            var pawn = createNewWhiteDwarf(pieceId, cellID);
+            calculatePathAhead(pawn);
+        }
 
     } else if (pieceId.includes("elf")) {
         if (pieceId.includes("black")) {
@@ -327,10 +330,13 @@ function isObstaclesFound(obj, nextCell) {
 
 //Play a Turn
 function atack() {
+
+    alert('Atadked');
+    var clickedElement = document.elementFromPoint(x, y);
 }
 
 function moved() {
-    if(moveClicked) {
+    if(!moveClicked) {
         moveClicked = false;
     } else {
         moveClicked = true;
