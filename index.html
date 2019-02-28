@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Board</title>
+    <link rel="stylesheet" type="text/css" href="_css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="_css/styles.css">
+    <link rel="stylesheet" type="text/css" href="_css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="_css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="_css/jquery-ui.min.css">
+
+
+    <script type="text/javascript" rel="script" src="_js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" rel="script" src="_js/jquery-ui.min.js"></script>
+    <script type="text/javascript" rel="script" src="_js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div id="message-div"></div>
+
+    <div class="container" style="position: absolute; top: 40px; left: 410px; width: 522px; height: 522px;border: 1px solid black;">
+        <div id="row-8" class="row">
+
+            <div id="cell-white-8A" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-8B" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-white-8C" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-8D" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-white-8E" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-8F" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-white-8G" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-8H" class="col-md-1 cell"><span class="black-piece"></span></div>
+
+        </div>
+        <div id="row-7" class="row">
+
+            <div id="cell-black-7A" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-white-7B" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-7C" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-white-7D" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-7E" class="col-md-1 cell"><span id="p-black-dwarf-5" class="black-piece">D</span></div>
+            <div id="cell-white-7F" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-black-7G" class="col-md-1 cell"><span class="black-piece"></span></div>
+            <div id="cell-white-7H" class="col-md-1 cell"><span class="black-piece"></span></div>
+
+        </div>
+
+        <div id="row-6" class="row">
+
+            <div id="cell-white-simple-6A" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-6B" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-6C" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-6D" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-6E" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-6F" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-6G" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-6H" class="col-md-1 cell"></div>
+
+        </div>
+        <div id="row-5" class="row">
+
+            <div id="cell-black-simple-5A" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-5B" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-5C" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-5D" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-5E" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-5F" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-5G" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-5H" class="col-md-1 cell"></div>
+
+        </div>
+
+        <div id="row-4" class="row">
+
+            <div id="cell-white-simple-4A" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-4B" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-4C" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-4D" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-4E" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-4F" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-4G" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-4H" class="col-md-1 cell"></div>
+
+        </div>
+        <div id="row-3" class="row">
+
+            <div id="cell-black-simple-3A" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-3B" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-3C" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-3D" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-3E" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-3F" class="col-md-1 cell"></div>
+            <div id="cell-black-simple-3G" class="col-md-1 cell"></div>
+            <div id="cell-white-simple-3H" class="col-md-1 cell"></div>
+
+        </div>
+
+        <div id="row-2" class="row">
+
+            <div id="cell-white-2A" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-black-2B" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-2C" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-black-2D" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-2E" class="col-md-1 cell"><span id="p-white-elf-5" class="white-piece">E</span></div>
+            <div id="cell-black-2F" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-2G" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-black-2H" class="col-md-1 cell"><span class="white-piece"></span></div>
+
+        </div>
+        <div id="row-1" class="row">
+
+            <div id="cell-black-1A" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-1B" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-black-1C" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-1D" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-black-1E" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-1F" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-black-1G" class="col-md-1 cell"><span class="white-piece"></span></div>
+            <div id="cell-white-1H" class="col-md-1 cell"><span class="white-piece"></span></div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" rel="script" src="_js/script.js"></script>
+</body>
+</html>
