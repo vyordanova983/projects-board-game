@@ -152,7 +152,7 @@ function Piece(id, type, currentPosition) {
 //Pawn
 function calculatePathAhead(obj) {
     selectedPiece = obj;
-    colorPawnKillCell(obj);
+    //colorPawnKillCell(obj);
     if (obj.type === "white") {
         var offset = $("#" + obj.currentPosition).offset();
         var x = offset.left;
@@ -167,16 +167,16 @@ function calculatePathAhead(obj) {
         colorCells(obj, downCell);
         colorCells(obj, leftCell);
         colorCells(obj, rightCell);
-        if (!isObstaclesFound(obj, nextCell)) {
+        /*if (!isObstaclesFound(obj, nextCell)) {
             colorCells(obj, nextCell);
             if (obj.isFirstMove) {
                 y -= 65;
                 nextCell = document.elementFromPoint(x, y);
                 if (!isObstaclesFound(obj, nextCell)) {
-                    colorCells(obj, nextCell);
+                    //colorCells(obj, nextCell);
                 }
             }
-        }
+        }*/
 
     } else if (obj.type === "black") {
         var offset = $("#" + obj.currentPosition).offset();
@@ -331,10 +331,13 @@ function isObstaclesFound(obj, nextCell) {
 //Play a Turn
 function atack() {
 
+    alert('Atadked');
+    var clickedElement = document.elementFromPoint(x, y);
+    var id = $(clickedElement).attr('id');
 }
 
 function moved() {
-    if(!moveClicked) {
+    if(moveClicked) {
         moveClicked = false;
     } else {
         moveClicked = true;
