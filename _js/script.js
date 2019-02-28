@@ -1,4 +1,5 @@
 
+
 var arrMovedWhitePawnList = [];
 var arrMovedBlackPawnList = [];
 
@@ -8,6 +9,7 @@ var arrMovedWhiteCastleList = [];
 var selectedPiece = null;
 var previousMovedPiece = null;
 
+var moveClicked = false;
 /**-------------------Receives click events-------------**/
 $(document).on("click", function (event) {
     var x = event.pageX;
@@ -15,20 +17,24 @@ $(document).on("click", function (event) {
     var clickedElement = document.elementFromPoint(x, y);
     var id = $(clickedElement).attr('id');
 
-    if (id !== undefined && id.includes("cell")) {//if clicked an empty cell
-        if (selectedPiece !== null && selectedPiece.id !== id) { //if one piece selected & then select other cell
-            refreshCells(selectedPiece);
+    if(moveClicked) {
+        if (id !== undefined && id.includes("cell")) {//if clicked an empty cell
+            if (selectedPiece !== null && selectedPiece.id !== id) { //if one piece selected & then select other cell
+                refreshCells(selectedPiece);
+            }
+            move(selectedPiece, clickedElement); //if previously selected a piece and now select a cell then selected piece move to selected cell
+
+        } else if (id !== undefined && id.includes("p")) { //if clicked a piece
+
+            if (selectedPiece !== null && selectedPiece.id !== id) { //if one piece selected & then select other piece
+                refreshCells(selectedPiece);
+            }
+            calculatePos(id);
+            killOppositePiece(selectedPiece, clickedElement);
+
         }
-        move(selectedPiece, clickedElement); //if previously selected a piece and now select a cell then selected piece move to selected cell
-
-    } else if (id !== undefined && id.includes("p")) { //if clicked a piece
-
-        if (selectedPiece !== null && selectedPiece.id !== id) { //if one piece selected & then select other piece
-            refreshCells(selectedPiece);
-        }
-        calculatePos(id);
-        killOppositePiece(selectedPiece, clickedElement);
-
+    } else {
+        alert('Choose if you want to atack, heal or move!');
     }
 });
 
@@ -44,10 +50,7 @@ function calculatePos(pieceId) {
             var pawn = createNewBlackDwarf(pieceId, cellID);
             calculatePathAhead(pawn);
 
-        } else if (pieceId.includes("white")) {
-            var pawn = createNewWhiteDwarf(pieceId, cellID);
-            calculatePathAhead(pawn);
-        }
+        } 
 
     } else if (pieceId.includes("elf")) {
         if (pieceId.includes("black")) {
@@ -204,7 +207,6 @@ function calculatePathAhead(obj) {
 
 //for castle queen and king
 function calculatePathTop(obj) {
-
     selectedPiece = obj;
     var offset = $("#" + obj.currentPosition).offset();
     var x = offset.left;
@@ -244,17 +246,13 @@ function calculatePathTop(obj) {
 
     for(var i = 0; i < cells.length; i++) {
         var current = cells[i];
-
             colorCells(obj, current);
-
     }
 
 }
 
 
 function move(obj, cell) {
-
-
     for (var i = 0; i < obj.positionsToBeMoved.length; i++) {
         if (obj.positionsToBeMoved[i] === cell) {
             $("#" + obj.id).appendTo(cell);
@@ -325,5 +323,21 @@ function isObstaclesFound(obj, nextCell) {
         }
     }
     return true;
+}
+
+//Play a Turn
+function atack() {
+}
+
+function moved() {
+    if(moveClicked) {
+        moveClicked = false;
+    } else {
+        moveClicked = true;
+    }
+}
+
+function healed() {
+    alert('healed');
 }
 
